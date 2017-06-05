@@ -4,35 +4,61 @@ $color3: rgb(255, 187, 51);
 $color4: rgb(255, 99, 71);
 $amount: 5%;
 
-.swatch {
-  width: 20%;
-  float: left;
-  margin-right: 4%;
+$colors: (
+  'color1': $color1,
+  'color2': $color2,
+  'color3': $color3,
+  'color4': $color4
+);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.color1-content, .color1-tint {
+body {
+  font-family: sans-serif;
+  font-weight: 400;
+}
+
+@each $color, $rgb in $colors {
+  .#{$color} {
+    background-color: $rgb;
+  }
+  .tint1-#{$color} {
+    background-color: lighten($rgb, $amount);
+  }
+  .tint3-#{$color} {
+    background-color: darken($rgb, $amount);
+  }
+  .blend1-#{$color} {
+    background-color: mix($color1, $rgb, 35%);
+  }
+  .blend2-#{$color} {
+    background-color: mix($color2, $rgb, 35%);
+  }
+  .blend3-#{$color} {
+    background-color: mix($color3, $rgb, 35%);
+  }
+  .blend4-#{$color} {
+    background-color: mix($color4, $rgb, 35%);
+  }
+}
+
+.color-content {
+  width: 20%;
+  margin-right: 4%;
+  float: left;
+}
+
+.color-content:first-of-type, .color-content:nth-of-type(4n+5) {
   margin-left: 4%;
 }
 
-.color {
+.swatch {
   height: 150px;
   width: 100%;
-}
-
-.color1-content .color {
-  background-color: $color1;
-}
-
-.color2-content .color {
-  background-color: $color2;
-}
-
-.color3-content .color {
-  background-color: $color3;
-}
-
-.color4-content .color {
-  background-color: $color4;
 }
 
 .color-info span {
@@ -43,91 +69,16 @@ $amount: 5%;
   float: left;
 }
 
-.color1-tint .tint1 {
-  height: 150px;
-  width: 33%;
-  background-color: lighten($color1, $amount);
+.color-tint {
+  overflow: auto;
 }
 
-.color1-tint .tint2 {
-  height: 150px;
+.color-tint div {
   width: 33%;
-  background-color: $color1;
+  height: 150px;
 }
 
-.color1-tint .tint3 {
-  height: 150px;
-  width: 33%;
-  background-color: darken($color1, $amount);
-}
-.color1-tint .tint1 {
-  height: 150px;
-  width: 33%;
-  background-color: lighten($color1, $amount);
-}
-
-.color1-tint .tint2 {
-  height: 150px;
-  width: 33%;
-  background-color: $color1;
-}
-
-.color1-tint .tint3 {
-  height: 150px;
-  width: 33%;
-  background-color: darken($color1, $amount);
-}
-
-.color2-tint .tint1 {
-  height: 150px;
-  width: 33%;
-  background-color: lighten($color2, $amount);
-}
-
-.color2-tint .tint2 {
-  height: 150px;
-  width: 33%;
-  background-color: $color2;
-}
-
-.color2-tint .tint3 {
-  height: 150px;
-  width: 33%;
-  background-color: darken($color2, $amount);
-}
-
-.color3-tint .tint1 {
-  height: 150px;
-  width: 33%;
-  background-color: lighten($color3, $amount);
-}
-
-.color3-tint .tint2 {
-  height: 150px;
-  width: 33%;
-  background-color: $color3;
-}
-
-.color3-tint .tint3 {
-  height: 150px;
-  width: 33%;
-  background-color: darken($color3, $amount);
-}
-
-.color4-tint .tint1 {
-  height: 150px;
-  width: 33%;
-  background-color: lighten($color4, $amount);
-}
-
-.color4-tint .tint2 {
-  height: 150px;
-  width: 33%;
-  background-color: $color4;
-}
-
-.color4-tint .tint3 {
-  height: 150px;
-  width: 33%;
-  background-color: darken($color4, $amount);
+.blend {
+  height: 50px;
+  width: 100%;
 }
