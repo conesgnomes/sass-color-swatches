@@ -1,3 +1,9 @@
+$color1: rgb(217,245,232);
+$color2: rgb(55, 203, 194);
+$color3: rgb(255, 187, 51);
+$color4: rgb(255, 99, 71);
+$amount: 5%;
+
 .swatch {
   width: 20%;
   float: left;
@@ -14,19 +20,19 @@
 }
 
 .color1-content .color {
-  background-color: #d9f5e8;
+  background-color: $color1;
 }
 
 .color2-content .color {
-  background-color: #37cbc2;
+  background-color: $color2;
 }
 
 .color3-content .color {
-  background-color: #ffbb33;
+  background-color: $color3;
 }
 
 .color4-content .color {
-  background-color: tomato;
+  background-color: $color4;
 }
 
 .color-info span {
@@ -40,91 +46,88 @@
 .color1-tint .tint1 {
   height: 150px;
   width: 33%;
-  background-color: #edfaf4;
+  background-color: lighten($color1, $amount);
 }
 
 .color1-tint .tint2 {
   height: 150px;
   width: 33%;
-  background-color: #d9f5e8;
+  background-color: $color1;
 }
 
 .color1-tint .tint3 {
   height: 150px;
   width: 33%;
-  background-color: #c5f0dc;
+  background-color: darken($color1, $amount);
 }
-
 .color1-tint .tint1 {
   height: 150px;
   width: 33%;
-  background-color: #edfaf4;
+  background-color: lighten($color1, $amount);
 }
 
 .color1-tint .tint2 {
   height: 150px;
   width: 33%;
-  background-color: #d9f5e8;
+  background-color: $color1;
 }
 
 .color1-tint .tint3 {
   height: 150px;
   width: 33%;
-  background-color: #c5f0dc;
+  background-color: darken($color1, $amount);
 }
 
 .color2-tint .tint1 {
   height: 150px;
   width: 33%;
-  background-color: #4bd0c8;
+  background-color: lighten($color2, $amount);
 }
 
 .color2-tint .tint2 {
   height: 150px;
   width: 33%;
-  background-color: #37cbc2;
+  background-color: $color2;
 }
 
 .color2-tint .tint3 {
   height: 150px;
   width: 33%;
-  background-color: #30b9b0;
+  background-color: darken($color2, $amount);
 }
 
 .color3-tint .tint1 {
   height: 150px;
   width: 33%;
-  background-color: #ffc44d;
+  background-color: lighten($color3, $amount);
 }
 
 .color3-tint .tint2 {
   height: 150px;
   width: 33%;
-  background-color: #ffbb33;
+  background-color: $color3;
 }
 
 .color3-tint .tint3 {
   height: 150px;
   width: 33%;
-  background-color: #ffb31a;
+  background-color: darken($color3, $amount);
 }
 
 .color4-tint .tint1 {
   height: 150px;
   width: 33%;
-  background-color: #ff7961;
+  background-color: lighten($color4, $amount);
 }
 
 .color4-tint .tint2 {
   height: 150px;
   width: 33%;
-  background-color: tomato;
+  background-color: $color4;
 }
 
 .color4-tint .tint3 {
   height: 150px;
   width: 33%;
-  background-color: #ff4d2e;
+  background-color: darken($color4, $amount);
 }
-
-/*# sourceMappingURL=styles.css.map */
